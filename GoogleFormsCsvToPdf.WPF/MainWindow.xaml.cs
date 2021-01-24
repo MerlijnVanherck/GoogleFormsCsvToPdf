@@ -49,6 +49,9 @@ namespace GoogleFormsCsvToPdf
                     DisplayError("Failed to open file", exc.Message);
                 }
             }
+
+            new FieldSelectionDialog(formData).ShowDialog();
+
             ToggleWindowEnabled();
         }
 
