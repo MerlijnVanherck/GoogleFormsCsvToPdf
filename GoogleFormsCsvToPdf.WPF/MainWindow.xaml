@@ -14,7 +14,6 @@
         <Border BorderThickness="1" BorderBrush="Black" Margin="20 20"></Border>
         <StackPanel Orientation="Horizontal" Margin="20 0 20 20">
             <Button Name="ConvertButton" Height="25" Width="60" IsEnabled="False" Click="Convert_Click">Convert</Button>
-
         </StackPanel>
     </StackPanel>
 </Window>
