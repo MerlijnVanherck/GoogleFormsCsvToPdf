@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoogleFormsCsvToPdf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Convert Google Forms CSV to PDF" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" MinWidth="500">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Margin="20 20 20 0">
+            <Button Height="25" Width="60" Click="Open_Click">Open</Button>
+            <Label Name="OpenLabel" Margin="20 0 0 0"></Label>
+        </StackPanel>
+        <Border BorderThickness="1" BorderBrush="Black" Margin="20 20"></Border>
+        <StackPanel Orientation="Horizontal" Margin="20 0 20 20">
+            <Button Name="ConvertButton" Height="25" Width="60" IsEnabled="False" Click="Convert_Click">Convert</Button>
 
-    </Grid>
+        </StackPanel>
+    </StackPanel>
 </Window>
