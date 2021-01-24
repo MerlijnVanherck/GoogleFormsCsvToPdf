@@ -14,7 +14,7 @@ namespace GoogleFormsCsvToPdf
         public FormData(FormField[] headers)
         {
             if (headers.Length < 1)
-                throw new ArgumentException("Cannot import data with less than 1 fields.");
+                throw new ArgumentException("Cannot import data with less than 1 field.");
 
             Headers = headers;
         }
@@ -24,7 +24,7 @@ namespace GoogleFormsCsvToPdf
             if (record is null)
                 throw new ArgumentNullException(nameof(record));
             if (record.Length != Headers.Length)
-                throw new ArgumentException($"Record did not have the correct number of fields (expected = {Headers.Length}, actual = {record.Length}.");
+                throw new ArgumentException($"Record does not have the correct number of fields (expected = {Headers.Length}, actual = {record.Length}).");
 
             InsertNotAvailableOnEmptyFields(record);
 
