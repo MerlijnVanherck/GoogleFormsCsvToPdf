@@ -9,18 +9,19 @@ using MigraDoc.Rendering;
 
 namespace GoogleFormsCsvToPdf
 {
-    static class PdfExporter
+    public static class PdfExporter
     {
-        public static void WritePdf(Stream fileStream, FormData formData)
+
+        public static void WritePdf(string path, FormData formData)
         {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             var renderer = new PdfDocumentRenderer(true)
             {
                 Document = ConstructPdfDocument(formData)
             };
-
             renderer.RenderDocument();
 
-            renderer.PdfDocument.Save(fileStream);
+            renderer.PdfDocument.Save(path);
         }
 
         private static Document ConstructPdfDocument(FormData formData)
@@ -58,7 +59,10 @@ namespace GoogleFormsCsvToPdf
 
         private static void AddStylesToDocument(Document doc)
         {
-            var style = doc.AddStyle("Title", "Normal");
+            var style = doc.Styles["Normal"];
+            //style.Font = new Font("Arial Unicode MS");
+
+            style = doc.AddStyle("Title", "Normal");
             style.Font.Size = 17;
             style.Font.Bold = true;
 
